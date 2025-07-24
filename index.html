@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Activity</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="details">
+      <h1 class="title">Your Activity</h1>
+      <ul class="workouts">
+        <form id="form" class="form hidden">
+          <div class="form_ip">
+            <label for="op_1" class="form_label">Type</label>
+            <select id="op_1" class="form_input form_input-type">
+              <option value="cycling">Cycling</option>
+              <option value="running">Running</option>
+              <option value="walking">Walking</option>
+            </select>
+          </div>
+          <div class="form_ip">
+            <label for="op_2" class="form_label">Distance</label>
+            <input
+              id="op_2"
+              type="number"
+              class="form_input form_input-distance"
+              placeholder="km"
+            />
+          </div>
+          <div class="form_ip">
+            <label for="op_3" class="form_label">Duration</label>
+            <input
+              id="op_3"
+              type="number"
+              class="form_input form_input-duration"
+              placeholder="min"
+            />
+          </div>
+          <div class="form_ip spec form_ip--hidden">
+            <label for="op_4" class="form_label">SPS</label>
+            <input
+              id="op_4"
+              type="number"
+              class="form_input form_input-sps"
+              placeholder="step/min"
+            />
+          </div>
+          <div class="form_ip spec">
+            <label for="op_5" class="form_label">Cadence</label>
+            <input
+              id="op_5"
+              type="number"
+              class="form_input form_input-cadence"
+              placeholder="meters"
+            />
+          </div>
+
+          <button class="form_btn form_input">Submit</button>
+        </form>
+
+        <!-- <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Cycling on April 5</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🦾</span>
+            <span class="workout__value">2.9</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+        </li> -->
+<!-- 
+        <li class="workout workout--walking" data-id="1234567891">
+          <h2 class="workout__title">Cycling on April 5</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🦾</span>
+            <span class="workout__value">5.4</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+        </li> -->
+        <!-- <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Cycling on April 5</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+        </li>
+        <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Cycling on April 5</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+        </li>
+        <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Cycling on April 5</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <div class="map" id="map"></div>
+  </body>
+</html>

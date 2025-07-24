@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+:root {
+  --color-1: #34073d;
+  --color-2: #fa5938;
+  --color-3: #88ff00;
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: rgba(0, 0, 0, 0.4);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  /* font-size: 80%; */
+  /* font-size: 62.5%; */
+
+  height: 100vh;
+  overflow: hidden;
+  line-height: 1.6;
+  padding: 2.5rem;
+  /* display: grid;
+    grid-template-columns: 1fr 2fr; */
+  color: var(--color-light--2);
+  display: flex;
+}
+.title {
+  text-transform: uppercase;
+  color: var(--color-2);
+  font-weight: 900;
+}
+/* .details {
+  flex-basis: 10rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-dark--1);
+  padding: 3rem 5rem 4rem 5rem;
+  align-items: center;
+  line-height: 1.6;
+  gap: 10px;
+  border-radius: 5px;
+} */
+.details {
+  flex-basis: 50rem;
+  background-color: var(--color-dark--1);
+  padding: 3rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+  filter: drop-shadow(0px 0 10px var(--color-dark--1));
+}
+/* .workouts {
+  display: grid;
+  gap: 0.75rem 1.5rem;
+} */
+.workouts {
+  list-style: none;
+  height: 77vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  background: var(--color-light--3);
+  padding: 10px;
+  align-items: center;
+}
+.form_ip {
+  padding: 10px;
+  display: grid;
+}
+/* .form_input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.2s;
+} */
+input:focus {
+  border: none;
+  outline: none;
+}
+
+.workout {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.form {
+  position: relative;
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  margin-bottom: 1.75rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  transition: all 0.5s, transform 1ms;
+}
+.form_ip {
+  display: flex;
+  align-items: center;
+}
+
+.form_ip--hidden {
+  display: none;
+}
+
+.form_label {
+  flex: 0 0 50%; /* IMPORTANT */
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.form_input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--2);
+  transition: all 0.2s;
+}
+.form_input:focus {
+  outline: none;
+  background-color: #fff;
+}
+.form.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.form_btn {
+  position: absolute;
+  height: min-content;
+  width: min-content;
+  /* display: flex; */
+  cursor: pointer;
+  /* grid-column: 2; */
+  /* margin-left: 25%; */
+  bottom: 0;
+  right: 0;
+  color: var(--color-light--2);
+  background-color: var(--color-2);
+  border-radius: 10px 0 0 0;
+  box-shadow: 0;
+  transition: all 0.3s;
+}
+.form_btn:focus {
+  background-color: #fff;
+  color: var(--color-1);
+}
+#map {
+  border-radius: 10px;
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-light--1);
+}
+.workout {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+.workout--walking,
+.workout--running 
+{
+  border-left: 5px solid var(--color-3);
+}
+.workout--cycling {
+  border-left: 5px solid var(--color-2);
+}
+.workout__title {
+  font-size: 1.7rem;
+  font-weight: 300;
+  grid-column: 1 / -1;
+}
+.workout__details {
+  display: flex;
+  align-items: baseline;
+}
+.workout__icon {
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+  height: 0.28rem;
+}
+.workout__value {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.workout__unit {
+  font-size: 1.1rem;
+  color: var(--color-light--1);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.workouts::-webkit-scrollbar {
+  width: 0;
+}
