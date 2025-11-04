@@ -71,8 +71,6 @@ class Walking extends Workout {
   }
 
 }
-// const run = new Running([16.2, 18.9], 5.2, 24, 4);
-// console.log(run);
 
 class App {
   #map;
@@ -117,16 +115,12 @@ class App {
 
   _showForm(mapE) {
     this.#mapEvent = mapE;
-    // console.log("Event generating on map");
     const { lat, lng } = this.#mapEvent.latlng;
-    // console.log('loading:',this.#mapEvent);
     form.classList.remove('hidden');
     act_dist.focus();
   }
 
   _toggleElevationField(e) {
-    // act_cylce.closest('.form_ip').classList.toggle('form_ip--hidden');
-    // act_walk.closest('.form_ip').classList.toggle('form_ip--hidden');
     console.log(spec);
     spec.forEach(function (ele) {
       ele.classList.add('form_ip--hidden');
@@ -172,7 +166,6 @@ class App {
     }
     this.#workouts.push(workout);
     console.log(workout);
-    // console.log(act_dist.value);
 
     this._renderWorkout(workout);
     this._renderWorkoutMarker(workout);
@@ -243,21 +236,6 @@ class App {
         </li>
         
         `;
-    // if(workout.type === 'walking')
-    //     html += `
-    //         <div class="workout__details">
-    //             <span class="workout__icon">⚡️</span>
-    //             <span class="workout__value">${workout.pace.toFixed(1)}</span>
-    //             <span class="workout__unit">km/h</span>
-    //         </div>
-    //         <div class="workout__details">
-    //             <span class="workout__icon">🦾</span>
-    //             <span class="workout__value">${workout.sps}</span>
-    //             <span class="workout__unit">km/h</span>
-    //         </div>
-    //     </li>
-        
-    //     `;
         console.log(html);
         form.insertAdjacentHTML('afterend',html);
   }
@@ -292,59 +270,3 @@ class App {
 }
 
 const app = new App();
-// app._getPosition(); // No need to do this again
-
-//  ORIGIANL MAP DEPLOY TRAIL//// if(navigator.geolocation){
-//     navigator.geolocation.getCurrentPosition(function(pos){
-//         console.log(pos);
-//         const {latitude,longitude} = pos.coords;
-//         // console.log(latitude,longitude);
-//         map = L.map('map').setView([latitude, longitude], 13);
-
-//         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//         maxZoom: 19,
-//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-//         }).addTo(map);
-
-//         const marker = L.marker([latitude,longitude]).addTo(map);
-//         marker.bindPopup("HI!!!").openPopup;
-//         // function onMapClick(e) {
-//         //     // alert("You clicked the map at " + e.latlng);
-//         //     // console.log(e.latlng);
-//         //     const {lat,lng} = e.latlng;
-//         //     // console.log("latitude is"+lat);
-//         //     // console.log("Longitude is"+lng);
-//         //     L.popup().setLatLng([lat,lng]).setContent(`Latitude: ${lat.toFixed(5)}\n Longitude: ${lng.toFixed(5)}`).openOn(map);
-//         // }
-
-//         // map.on('click', onMapClick);
-//         map.on('click',function(mapE){
-//             mapEvent = mapE;
-//             console.log("Event generating on map");
-//             // console.log(mapEvent);
-//             const {lat,lng} = mapEvent.latlng;
-//             form.classList.remove('hidden');
-//             act_dist.focus();
-//             // console.log(lat,lng);
-//         })
-
-//     },function(){
-//         console.log('Cannot get your Location');
-//     })
-// }
-
-// form_submit.addEventListener('click',function(e){
-//     e.preventDefault();
-//     // if(act_dist.innerHTML)
-//     console.log(mapEvent);
-//     const {lat,lng} = mapEvent.latlng;
-//     console.log(lat,lng);
-//     L.marker([lat,lng]).addTo(map).bindPopup(
-//         L.popup({
-//             autoClose: false,
-//             closeOnClick: false
-//         })
-//     ).setPopupContent('Kalyan').openPopup();
-//     // console.log(act_dist.value);
-//     form.classList.add('hidden');
-// });

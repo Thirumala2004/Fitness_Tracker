@@ -64,10 +64,6 @@ body {
   z-index: 10;
   filter: drop-shadow(0px 0 10px var(--color-dark--1));
 }
-/* .workouts {
-  display: grid;
-  gap: 0.75rem 1.5rem;
-} */
 .workouts {
   list-style: none;
   height: 77vh;
@@ -86,14 +82,6 @@ body {
   padding: 10px;
   display: grid;
 }
-/* .form_input {
-  width: 100%;
-  padding: 0.3rem 1.1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 3px;
-  transition: all 0.2s;
-} */
 input:focus {
   border: none;
   outline: none;

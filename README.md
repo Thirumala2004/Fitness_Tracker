@@ -23,8 +23,5 @@ A simple web application to track your fitness activities (Cycling, Running, Wal
 - `style.css` - Stylesheet
 - `script.js` - Main JavaScript logic
 
-## Screenshots
-![screenshot](screenshot.png)
-
 ## License
 This project is for educational purposes only.
