@@ -18,6 +18,12 @@ A simple web application to track your fitness activities (Cycling, Running, Wal
 2. Open `index.html` in your browser.
 3. Allow location access to use the map features.
 
+## Link to Website
+    https://fitnesstracker.infinityfree.me/
+    - Click on the above link
+    - Select the location where you are
+    - Give the details for your workout
+
 ## File Structure
 - `index.html` - Main HTML file
 - `style.css` - Stylesheet
