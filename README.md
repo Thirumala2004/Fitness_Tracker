@@ -17,12 +17,13 @@ A simple web application to track your fitness activities (Cycling, Running, Wal
 1. Clone or download this repository.
 2. Open `index.html` in your browser.
 3. Allow location access to use the map features.
+## Project Website
 
-## Link to Website
-    [https://fitnesstracker.infinityfree.me/](https://fitnesstracker.infinityfree.me/)
-    - Click on the above link
-    - Select the location where you are
-    - Give the details for your workout
+Open the live demo: [Fitness Tracker — Live Demo](https://fitnesstracker.infinityfree.me/)
+
+- Click the link to open the project.
+- Allow location access and select your location on the map.
+- Enter workout details (type, distance, duration, and cadence/steps) to add a workout.
 
 ## File Structure
 - `index.html` - Main HTML file
