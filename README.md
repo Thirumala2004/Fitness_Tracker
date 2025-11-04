@@ -19,7 +19,7 @@ A simple web application to track your fitness activities (Cycling, Running, Wal
 3. Allow location access to use the map features.
 
 ## Link to Website
-    https://fitnesstracker.infinityfree.me/
+    [https://fitnesstracker.infinityfree.me/](url)
     - Click on the above link
     - Select the location where you are
     - Give the details for your workout
